@@ -11,16 +11,95 @@
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
     .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    .attribution a { color: hsl(228, 45%, 44%); 
+                    text-decoration: none;
+                    }
   </style>
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+
 </head>
 <body>
-
   <!-- Pull dynamic content from the data.json file -->
+  <!--Connect JavaScrip-->
+  <script src="./index.js"></script>
   
-  <div class="attribution">
+  <main>
+    <div class="comentarioPost" id="commentPost01"> <!--Ou posso usar section aqui-->
+      <div class="likes">
+        <h3><a href="">+</a></h3>
+        <p>5</p>
+        <h3><a href="">-</a></h3>
+      </div>
+
+      <section> 
+        <div class="logoNameDateReply">
+          <div class="logoNameDate"> 
+            <img class="imgPerfil"src="./images/avatars/image-amyrobson.png" alt=""> 
+            <h4 class="nameUser">
+               amyrobson
+            </h4> 
+            <p >1 month ago</h3> 
+          </div>
+          <h4><a href=""><img src="./images/icon-reply.svg" alt=""> Reply</a> </h4> 
+        </div>
+        <p class="textComment"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam sed quidem saepe beatae quam tenetur nemo quos vitae corrupti placeat tempore quia doloribus alias at optio neque, excepturi totam. Commodi!</p>
+      </section>
+    </div>
+    
+    <div class="comentarioPost" id="commentPost02"> <!--Ou posso usar section aqui-->
+      <div>Curtidas</div>
+      <section> 
+        <div class="logoNameDateReply">
+          <div> 
+          <h3><img class="imgPerfil" src="./images/avatars/image-maxblagun.webp" alt=""> <strong>amyrobson</strong>  </h3> <p> 1 month ago</p>  </div>
+          <h3><a href=""><img src="" alt=""> Reply</a> </h3> 
+        </div>
+        <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam sed quidem saepe beatae quam tenetur nemo quos vitae corrupti placeat tempore quia doloribus alias at optio neque, excepturi totam. Commodi!</p>
+      </section>
+    </div>
+    
+
+    <div class="commentOfComment" id="comment01Post02"> <!--Ou posso usar section aqui-->
+      <div>Curtidas</div>
+      <section> 
+        <div class="logoNameDateReply">
+          <h3><img src="" alt=""> <strong>amyrobson</strong>  1 month ago</h3> 
+          <h3><a href=""><img src="" alt=""> Reply</a> </h3> 
+        </div>
+        <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam sed quidem saepe beatae quam tenetur nemo quos vitae corrupti placeat tempore quia doloribus alias at optio neque, excepturi totam. Commodi!</p>
+      </section>
+    </div>
+
+    <div class="commentOfComment" id="comment02Post02"> <!--Ou posso usar section aqui-->
+      <div >Curtidas</div>
+      <section> 
+        <div class="logoNameDateReply">
+          <h3><img src="" alt=""> <strong>amyrobson</strong>  1 month ago</h3> 
+          <h3><a href=""><img src="" alt=""> Reply</a> </h3> 
+        </div>
+        <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam sed quidem saepe beatae quam tenetur nemo quos vitae corrupti placeat tempore quia doloribus alias at optio neque, excepturi totam. Commodi!</p>
+      </section>
+    </div>
+
+    <div class="addCommentUser">
+      <form action="">
+          <img src="./images/avatars/image-juliusomo.png" alt="">
+          <textarea name="" id="" cols="75" rows="5" placeholder="Add a comment..."></textarea> 
+          <button>SEND</button>
+      </form>
+    </div>
+
+
+ 
+  </main>
+  <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+    Coded by <a href="#">Breno Cadette</a>.
+  </footer>
+  
 </body>
 </html>

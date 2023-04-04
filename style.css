@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+width: 1440px;
+font-size: 13px;
+font-family: Rubik;
+display: flex;
+justify-content: center;
+background-color: hsl(223, 19%, 93%);
+}
+
+main{
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    gap: 10px;
+    margin: 50px;
+
+}
+
+
+.comentarioPost, .commentOfComment {
+background-color: white;
+display: flex;
+width: 100%;
+border-radius: 8px;
+
+}
+
+.logoNameDateReply{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px 10px 0 ;
+    width: 100%;    
+    font-size: 15px;
+
+}
+
+.logoNameDate{
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 10px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.imgPerfil {
+    height: 25px;
+    width: auto;
+}
+
+.likes{
+    margin: 20px;
+    padding: 10px;
+    background-color:  hsl(228, 33%, 97%);
+    color: hsl(238, 40%, 52%);
+    font-weight: bold;
+}
+
+.textComment{
+    font-size: 13px;
+    color:gray;
+}
+
+.addCommentUser{
+background-color: white;
+display: flex;
+width: 100%;
+border-radius: 8px;
+
+}
+
+form{
+     display: flex;
+     justify-content: space-between;
+     margin: 10px;
+     gap: 10px;
+}
+
+form button{
+height: 50%;
+padding: 10px;
+background-color:rgba(42, 64, 190, 0.829);
+border-radius: 8px;
+border: none;
+color: white;
+font-weight: bold;
+font-variant: small-caps;
+}
+
+form textarea{
+    border-color: rgb(230, 229, 229);
+}
+
+form img {
+    height: 50%;
+    width: auto;
+}
+footer {
+    position: absolute;
+    bottom: 2px;
+    width: 100%;
+}
