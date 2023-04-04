@@ -25,9 +25,11 @@
 <body>
   <!-- Pull dynamic content from the data.json file -->
   <!--Connect JavaScrip-->
-  <script src="./index.js"></script>
+  <script src="./index.js" defer></script>
   
   <main>
+    <div id="reference"></div>
+    
     <div class="comentarioPost" id="commentPost01"> <!--Ou posso usar section aqui-->
       <div class="likes">
         <h3><a href="">+</a></h3>
@@ -50,40 +52,7 @@
       </section>
     </div>
     
-    <div class="comentarioPost" id="commentPost02"> <!--Ou posso usar section aqui-->
-      <div>Curtidas</div>
-      <section> 
-        <div class="logoNameDateReply">
-          <div> 
-          <h3><img class="imgPerfil" src="./images/avatars/image-maxblagun.webp" alt=""> <strong>amyrobson</strong>  </h3> <p> 1 month ago</p>  </div>
-          <h3><a href=""><img src="" alt=""> Reply</a> </h3> 
-        </div>
-        <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam sed quidem saepe beatae quam tenetur nemo quos vitae corrupti placeat tempore quia doloribus alias at optio neque, excepturi totam. Commodi!</p>
-      </section>
-    </div>
-    
-
-    <div class="commentOfComment" id="comment01Post02"> <!--Ou posso usar section aqui-->
-      <div>Curtidas</div>
-      <section> 
-        <div class="logoNameDateReply">
-          <h3><img src="" alt=""> <strong>amyrobson</strong>  1 month ago</h3> 
-          <h3><a href=""><img src="" alt=""> Reply</a> </h3> 
-        </div>
-        <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam sed quidem saepe beatae quam tenetur nemo quos vitae corrupti placeat tempore quia doloribus alias at optio neque, excepturi totam. Commodi!</p>
-      </section>
-    </div>
-
-    <div class="commentOfComment" id="comment02Post02"> <!--Ou posso usar section aqui-->
-      <div >Curtidas</div>
-      <section> 
-        <div class="logoNameDateReply">
-          <h3><img src="" alt=""> <strong>amyrobson</strong>  1 month ago</h3> 
-          <h3><a href=""><img src="" alt=""> Reply</a> </h3> 
-        </div>
-        <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam sed quidem saepe beatae quam tenetur nemo quos vitae corrupti placeat tempore quia doloribus alias at optio neque, excepturi totam. Commodi!</p>
-      </section>
-    </div>
+   
 
     <div class="addCommentUser">
       <form action="">
