@@ -149,7 +149,7 @@ likedown.addEventListener("click", function(){
 })
 */
 
-//Código para add comentário de usuário 
+/*Código para add comentário de usuário 
 
 let buttonComment = document.querySelector("#buttonCommentOfUserLogin")
 let textArea = document.querySelector("#textArea")
@@ -182,49 +182,86 @@ buttonComment.addEventListener("click", function(){
   console.log(response2)
 
 })
+//Add comment finally
+*/
+
+let buttonsActivated = false;
+
+if(buttonsActivated == false){
+  setScore()
+}
+
+//Add comment 2
+
+const addButton = document.querySelector("#buttonCommentOfUserLogin");
+
+addButton.addEventListener("click", function(){
+  const textAreaValue = document.querySelector("#textArea").value;
+
+  if(textAreaValue) {
+    console.log("Entrou no IF de addcomment")
+    const newComment = {
+      id: response2.comments.length,
+      user: {
+        username: `${response2.currentUser.username}`,
+        image: {
+          png: `${response2.currentUser.image.png}`,
+        },
+      },
+      content: textAreaValue,
+      score: 0,
+      replies: [],
+      createdAt: "just now",
+    };
+    response2.comments.push(newComment);
+
+    //Cria um novo elemento html para o novo comentário
+
+    const newCommentDiv = document.createElement("div");
+    newCommentDiv.classList.add("comentarioPost");
+    newCommentDiv.setAttribute("id", "commentPost" + newComment.id )
+    newCommentDiv.innerHTML = `
+    <div class="likes">
+      <h3 id="score_+_commentPost${newComment.id}">+</h3>
+      <p id="score_commentPost${newComment.id}">${newComment.score}</p>
+      <h3 id="score_-_commentPost${newComment.id}">-</h3>
+    </div>
+    <section>
+      <div class="logoNameDateReply">
+        <div class="logoNameDate">
+          <img
+            class="imgPerfil"
+            src="${newComment.user.image.png}"
+            alt=""
+          />
+          <h4 class="nameUser">${newComment.user.username}</h4>
+          <p>${newComment.createdAt}</p>
+        </div>
+        <h4 id="reply"><img src="./images/icon-reply.svg" alt=""> Reply </h4>
+      </div>
+      <p>${newComment.content}</p>
+    </section>
+  `;
+  const main = document.querySelector("#reference");
+  main.insertBefore(newCommentDiv, document.querySelector(".addCommmentUser"))
+
+  document.querySelector("#textArea").value = ""
+  setScore()
+  buttonsActivated = true;
+  }
+
+})
+
+
 
 
 })
 .catch(error => console.log(error))
 .finally(() => {
   console.log("Fetch json concluído")
-
-  //Pegando todas os id de todas as div de comentários
-  let commentsAll = document.querySelectorAll("#reference > div")
-  console.log("oi", commentsAll[0])
-
-
-
-  //Código para like de deslike
-  let arrayScoreUp = document.querySelectorAll(".likes > h3:first-child")
-  console.log("arrayScoreUp >> ", arrayScoreUp)
-  //Ideia de como selecionar o h3 da div intereira document.querySelector(".comentarioPost div.likes h3:nth-of-type(2)");
-
-  let arrayScore = document.querySelectorAll(".likes > p")
-  console.log("arrayScore >> ", arrayScore)
-
-  let arrayScoreDown = document.querySelectorAll(".likes > h3:nth-child(3)") // Poderia usar tbm h3:last-child
-  console.log("arrayScoreDown >> ", arrayScoreDown)
+ 
   
-  arrayScoreUp.forEach(function(elemento, index){
-    console.log("Elemento ->"); console.log(elemento)
-    elemento.addEventListener("click", function(){
-      let score =  arrayScore[index].innerHTML
-      score++
-      arrayScore[index].innerHTML = score
-    } )
 
-  })
-
-  arrayScoreDown.forEach(function(elemento, index){
-    console.log("Elemento ->"); console.log(elemento)
-    elemento.addEventListener("click", function(){
-      let score =  arrayScore[index].innerHTML
-      score--
-      arrayScore[index].innerHTML = score
-    } )
-
-  })
 
 //Código do reply
 
@@ -259,6 +296,48 @@ reply.forEach(function(elemento, index){
 
 
 
+//Função que modifica o score
+function setScore ( ) { 
+ 
+
+  //Pegando todas os id de todas as div de comentários
+  let commentsAll = document.querySelectorAll("#reference > div")
+  console.log("oi", commentsAll[0])
+
+
+  //Código para like de deslike
+  let arrayScoreUp = document.querySelectorAll(".likes > h3:first-child")
+  console.log("arrayScoreUp >> ", arrayScoreUp)
+  //Ideia de como selecionar o h3 da div intereira document.querySelector(".comentarioPost div.likes h3:nth-of-type(2)");
+
+  let arrayScore = document.querySelectorAll(".likes > p")
+  console.log("arrayScore >> ", arrayScore)
+
+  let arrayScoreDown = document.querySelectorAll(".likes > h3:nth-child(3)") // Poderia usar tbm h3:last-child
+  console.log("arrayScoreDown >> ", arrayScoreDown)
+  
+  arrayScoreUp.forEach(function(elemento, index){
+    console.log("Elemento ->"); console.log(elemento)
+    elemento.addEventListener("click", function(){
+      let score =  arrayScore[index].innerHTML
+      score++
+      arrayScore[index].innerHTML = score
+    } )
+
+  })
+
+  arrayScoreDown.forEach(function(elemento, index){
+    console.log("Elemento ->"); console.log(elemento)
+    elemento.addEventListener("click", function(){
+      let score =  arrayScore[index].innerHTML
+      score--
+      arrayScore[index].innerHTML = score
+    } )
+
+  })
+
+  buttonsActivated = true
+}
 
 
  // const comment = response2.comments[i];     
